@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    
+    function vacio()
+    {
+        var string = document.getElementById('string').value;
+        if (string == '')
+        {
+    
+        alert ("El string está vacio");
+    }
+    else
+    {
+        alert("El string no está vacio");
+    }
+    }
+    document.getElementById("resultado").innerHTML = string
+
+    function invertir() {
+        var string = document.getElementById('string').value;
+        let result = "";
+
+        for (let i = string.length -1; i>=0; i--) {
+            result +=string[i];
+        }
+        alert(result);
+    }
+
+    function aes(){
+        var string = document.getElementById('string').value;
+        var contador = (string.match(/a/g) || []).length;
+
+        alert("tiene "+contador+" a/aes")
+    }
+
+    function antesdea(){
+        var string =document.getElementById('string').value;
+        var string2 = string.toLowerCase();
+        var pos = string2.search("a");
+        var resultado = string2.substring(0, pos);
+
+        alert (resultado)
+    }
+
+    function primerultimaa(){
+        var string = document.getElementById('string').value;
+        var string2 = string.toLowerCase();
+        var primera =string2.indexof("a");
+        var ultima = string2.lastIndexof("a");
+
+        alert("primera a= "+ primera +" ultima a= " +ultima)
+    }
+    </script>
+    
+    
+    <input type="text" id="string">
+    <br>
+    <input type="button" value="Vacio?" onClick="vacio()">
+    <input type="button" value="Invertir" onClick="invertir()">
+    <input type="button" value="Contar A" onClick="aes()">
+    <input type="button" value="Antes de A" onClick="antesdea()">
+    <input type="button" value="Primera y ultima A" onClick="primerultimaa()">
+    <div id="resultado">
+        <p></p>
+    </div>
+    </body>
+    </html>
